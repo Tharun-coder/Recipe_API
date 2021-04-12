@@ -1,0 +1,43 @@
+.header {
+  background-color: rgb(183, 212, 139);
+  text-align: center;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  padding-top: 5px;
+}
+
+body {
+  background-image: url("https://thumbs.dreamstime.com/b/indian-food-curry-butter-chicken-palak-paneer-chiken-tikka-biryani-vegetable-curry-papad-dal-palak-sabji-jira-alu-rice-138550014.jpg");
+  height: 600px;
+  object-fit: contain;
+  background-size: cover;
+}
+
+.info-search .search {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.info-search .search input {
+  width: 500px;
+  height: 40px;
+  outline: none;
+}
+
+.info-search .search button {
+  outline: none;
+  position: absolute;
+  left: 1000px;
+  height: 40px;
+  border-radius: 0%;
+}
+
+.info-search .search button::shadow {
+  outline: none;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}

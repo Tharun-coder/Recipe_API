@@ -10,6 +10,7 @@ async function getData(recipe) {
       `${recipe_url}q=${recipe}&app_id=${app_id}&app_key=${app_key}`
     );
     let data = await res.json();
+    let id = 0;
     data.hits.forEach((hit) => {
       let col = createTag("div", "col-lg-3 col-sm-6 col-md-4 mt-5");
       col.setAttribute("style", "height:500px;overflow:auto");
@@ -18,16 +19,17 @@ async function getData(recipe) {
       img.src = hit.recipe.image;
       img.setAttribute("style", "height:200px;width:100%");
       let card_body = createTag("div", "card-body");
-
+      console.log(hit);
+      id = id + 1;
       //HealthLabels
       let health_div = createTag("div", "heathLabels");
       health_div.innerHTML = `<!-- Button trigger modal -->
-      <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#exampleModal">
+      <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#healthModal${id}">
         About
       </button>
 
       <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="healthModal${id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -46,12 +48,12 @@ async function getData(recipe) {
       //ingredients
       let ingre_div = createTag("div", "ingredients");
       ingre_div.innerHTML = `<!-- Button trigger modal -->
-      <button type="button" class="btn btn-dark btn-sm mt-1" data-toggle="modal" data-target="#exampleModal">
+      <button type="button" class="btn btn-dark btn-sm mt-1" data-toggle="modal" data-target="#ingredientModal${id}">
         Ingredients
       </button>
 
       <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="ingredientModal${id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">

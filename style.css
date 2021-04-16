@@ -33,11 +33,21 @@ body {
   height: 40px;
   border-radius: 0%;
 }
-
+/* 
 .info-search .search button::shadow {
   outline: none;
-}
+} */
 
 .container::-webkit-scrollbar {
   display: none;
+}
+
+.info-search .search button:focus {
+  outline: 0 !important;
+  box-shadow: none;
+}
+
+.info-body .card button:focus {
+  outline: 0 !important;
+  box-shadow: none;
 }
